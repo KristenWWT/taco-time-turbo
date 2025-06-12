@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -29,7 +28,7 @@ const menuItems: MenuItem[] = [
     description: "Seasoned ground beef with lettuce, tomato, cheese, and sour cream",
     price: 3.99,
     category: "Tacos",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
     spicyLevel: 1
   },
   {
@@ -38,7 +37,7 @@ const menuItems: MenuItem[] = [
     description: "Slow-cooked pork with onions, cilantro, and lime",
     price: 4.49,
     category: "Tacos",
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=300&fit=crop",
     spicyLevel: 2
   },
   {
@@ -47,7 +46,7 @@ const menuItems: MenuItem[] = [
     description: "Grilled fish with cabbage slaw and chipotle mayo",
     price: 4.99,
     category: "Tacos", 
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1615870216519-2f9fa775b0c4?w=400&h=300&fit=crop",
     spicyLevel: 1
   },
   {
@@ -56,7 +55,7 @@ const menuItems: MenuItem[] = [
     description: "Grilled chicken, rice, beans, cheese, and salsa wrapped in a flour tortilla",
     price: 8.99,
     category: "Burritos",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=300&fit=crop"
   },
   {
     id: "5",
@@ -64,7 +63,7 @@ const menuItems: MenuItem[] = [
     description: "Black beans, rice, peppers, onions, and avocado",
     price: 7.99,
     category: "Burritos",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1574343071812-6beef259a999?w=400&h=300&fit=crop"
   },
   {
     id: "6",
@@ -72,7 +71,7 @@ const menuItems: MenuItem[] = [
     description: "Fresh made guacamole with tortilla chips",
     price: 5.99,
     category: "Sides",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1541686445856-743348d24cdd?w=400&h=300&fit=crop"
   },
   {
     id: "7",
@@ -80,7 +79,7 @@ const menuItems: MenuItem[] = [
     description: "Grilled corn with mayo, cheese, chili powder, and lime",
     price: 4.99,
     category: "Sides", 
-    image: "/placeholder.svg",
+    image: "https://images.unsplash.com/photo-1621961458348-f013d219b50c?w=400&h=300&fit=crop",
     spicyLevel: 2
   },
   {
@@ -89,7 +88,7 @@ const menuItems: MenuItem[] = [
     description: "Traditional rice and cinnamon drink",
     price: 2.99,
     category: "Drinks",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop"
   }
 ];
 
@@ -325,8 +324,12 @@ const Index = () => {
               
               return (
                 <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-all duration-300 border-orange-200 hover:border-orange-300">
-                  <div className="aspect-video bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center">
-                    <span className="text-6xl">🌮</span>
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   
                   <CardHeader>
